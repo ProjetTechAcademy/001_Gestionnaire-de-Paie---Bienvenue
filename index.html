@@ -5,347 +5,302 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>planning.html</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-bg': '#121212',
+                        'dark-card': '#1E1E1E',
+                        'neon-blue': '#40C0FF',
+                        'neon-pink': '#FF4081',
+                        'neon-yellow': '#FFEF5A',
+                        'text-primary': '#E0E0E0',
+                        'text-secondary': '#A0A0A0',
+                        'accent-whatsapp': '#25D366',
+                        'accent-discord': '#7289DA',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: 0, transform: 'translateY(20px)' },
+                            '100%': { opacity: 1, transform: 'translateY(0)' },
+                        },
+                        scaleIn: {
+                            '0%': { transform: 'scale(0.95)', opacity: 0 },
+                            '100%': { transform: 'scale(1)', opacity: 1 },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 5px #40C0FF, 0 0 10px #40C0FF, 0 0 15px #40C0FF' },
+                            '50%': { boxShadow: '0 0 10px #FFEF5A, 0 0 20px #FFEF5A, 0 0 30px #FFEF5A' },
+                        },
+                    },
+                    animation: {
+                        fadeIn: 'fadeIn 0.8s ease-out forwards',
+                        scaleIn: 'scaleIn 0.6s ease-out forwards',
+                        pulseGlow: 'pulseGlow 2s infinite',
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #F8F4FF; /* Couleur de fond douce */
-            color: #2C3E50; /* Couleur de texte principale */
         }
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 300px;
-            max-height: 400px;
-        }
-        @media (min-width: 768px) {
-            .chart-container {
-                height: 350px;
-            }
-        }
-        @keyframes blink {
-            0%, 100% { color: #E74C3C; } /* Rouge vif */
-            50% { color: #FFFFFF; } /* Blanc pour le clignotement */
-        }
-        .blinking-text {
-            animation: blink 1.5s linear infinite;
-        }
-        .icon-card {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 6rem;
-            height: 6rem;
-            margin-bottom: 0.5rem;
-            background-color: #F9F871; /* Jaune soutenu */
-            border-radius: 9999px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .icon-svg {
-            width: 3rem;
-            height: 3rem;
-            fill: #2C3E50; /* Couleur foncée pour l'icône */
+        .text-justify-both {
+            text-align: justify;
+            -webkit-hyphens: auto;
+            -moz-hyphens: auto;
+            hyphens: auto;
         }
     </style>
 </head>
-<body class="text-[#2C3E50]">
+<body class="bg-dark-bg text-text-primary">
     <div class="container mx-auto p-4 md:p-8">
-        <header class="text-center mb-12">
-            <h1 class="text-3xl md:text-4xl font-bold text-[#6D28D9] mb-2">Graduate Gestionnaire de Paie</h1>
-            <h2 class="text-4xl md:text-5xl font-bold text-[#3498DB] mb-2">Votre Parcours en un Coup d'Œil</h2>
-            <img src="https://d361s2n92s4y7.cloudfront.net/images/qrcode_app.comptalia.com.png" alt="Logo de l'application Studi" class="mx-auto w-24 h-24 rounded-lg shadow-md mt-4">
-            <a href="https://app.comptalia.com/v3/blog/details/52086?hasOnlyOneParcours=false" class="block text-sm text-[#3498DB] hover:underline mt-2" target="_blank" rel="noopener noreferrer">Accédez à la newsletter complète</a>
+        <header class="text-center mb-12 animate-fadeIn">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-neon-blue mb-2">Graduate Gestionnaire de Paie</h1>
+            <h2 class="text-4xl md:text-5xl font-extrabold text-neon-pink mb-2">Votre Parcours en un Coup d'Œil</h2>
+            <img src="https://d361s2n92s4y7.cloudfront.net/images/qrcode_app.comptalia.com.png" alt="Logo de l'application Studi" class="mx-auto w-24 h-24 rounded-lg shadow-lg mt-4 animate-scaleIn">
+            <a href="https://app.comptalia.com/v3/blog/details/52086?hasOnlyOneParcours=false" class="block text-sm text-neon-blue hover:underline mt-2" target="_blank" rel="noopener noreferrer">Accédez à la newsletter complète</a>
         </header>
 
         <main class="space-y-16">
-            <section class="bg-white rounded-lg shadow-xl p-6 text-center">
-                <p class="font-bold text-red-500 text-xl blinking-text">
+            <section class="bg-dark-card rounded-lg shadow-xl p-6 text-center animate-scaleIn">
+                <p class="font-bold text-neon-yellow text-xl blinking-text animate-pulseGlow">
                     Je vous invite à lire ce document : la plupart des réponses à vos questions sont ici.
                 </p>
             </section>
+
+             <!-- Section Liens Communautaires -->
+            <section id="community-links" class="bg-dark-card rounded-lg shadow-md p-8 text-center animate-fadeIn" style="animation-delay: 0.2s;">
+                <h2 class="text-3xl font-bold text-neon-blue mb-6">Rejoignez la Communauté !</h2>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="https://chat.whatsapp.com/EtV0ux5ipAG5JDhopzo0ut" class="w-full sm:w-auto inline-block bg-accent-whatsapp text-dark-bg py-3 px-6 rounded-full font-bold text-lg hover:bg-opacity-80 transition-colors duration-300 transform hover:scale-105" target="_blank" rel="noopener noreferrer">
+                         <!-- WhatsApp SVG Icon -->
+                        <svg class="w-6 h-6 inline-block mr-2" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.04 2.16C6.545 2.16 2.056 6.653 2.056 12.15c0 1.79.478 3.513 1.393 5.03L2.012 21.03l3.8-1.025a9.837 9.837 0 005.187 1.408c5.495 0 9.988-4.493 9.988-9.988S17.535 2.16 12.04 2.16zM17.062 15.655a.86.86 0 01-.61.267c-.204 0-.408-.076-.563-.228-1.125-1.054-2.316-2.164-3.56-3.218-.328-.276-.65-.542-.99-.838-.284-.25-.382-.41-.442-.66a.465.465 0 01.12-.556c.148-.12.302-.244.45-.37.332-.276.66-.542.99-.817.18-.152.26-.35.25-.56a.81.81 0 00-.23-.62c-.15-.125-.3-.25-.455-.38-.21-.19-.45-.25-.66-.23-.314.03-.62.06-.93.09-.23.02-.45-.02-.68-.12-.22-.11-.44-.22-.66-.33-.25-.13-.49-.25-.74-.38-.29-.15-.55-.22-.84-.23h-.03a.585.585 0 00-.58.62c.02.48.05.95.09 1.43a6.83 6.83 0 00.315 1.57c.32.74.82 1.4 1.39 1.94 1.6 1.4 3.25 2.8 4.88 4.2.33.29.67.58.99.88.24.23.49.46.74.69a.82.82 0 00.58.26h.03a.56.56 0 00.57-.49c.04-.37.06-.75.09-1.12.02-.19-.04-.38-.15-.53z"/>
+                        </svg>
+                        WhatsApp
+                    </a>
+                    <a href="https://discord.gg/v473jkhH36" class="w-full sm:w-auto inline-block bg-accent-discord text-white py-3 px-6 rounded-full font-bold text-lg hover:bg-opacity-80 transition-colors duration-300 transform hover:scale-105" target="_blank" rel="noopener noreferrer">
+                        <!-- Discord SVG Icon -->
+                        <svg class="w-6 h-6 inline-block mr-2" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21.571 2.296l-2.348-1.353a.997.997 0 00-1.41.365l-2.613 4.536c-1.847-.202-3.72-.202-5.568 0L6.187 1.308a.998.998 0 00-1.41.365L2.429 2.296a1 1 0 00-.365 1.41l1.624 2.82c-.894 1.258-1.54 2.658-1.87 4.128-.314 1.472-.314 3.018-.002 4.49.33 1.47.976 2.87 1.87 4.128l-1.624 2.82a1 1 0 00.365 1.41l2.348 1.353a.997.997 0 001.41-.365l2.613-4.536c1.847.202 3.72.202 5.568 0l2.613 4.536a.997.997 0 001.41.365l2.348-1.353a1 1 0 00.365-1.41l-1.624-2.82c.894-1.258 1.54-2.658 1.87-4.128.314-1.472.314-3.018.002-4.49-.33-1.47-.976-2.87-1.87-4.128l1.624-2.82a1 1 0 00-.365-1.41zm-6.574 12.352c-1.246 0-2.257-.905-2.257-2.016 0-1.112 1.011-2.017 2.257-2.017s2.257.905 2.257 2.017c0 1.111-1.011 2.016-2.257 2.016zm5.83-2.016c0 1.111-1.011 2.016-2.257 2.016s-2.257-.905-2.257-2.016c0-1.112 1.011-2.017 2.257-2.017s2.257.905 2.257 2.017z"/>
+                        </svg>
+                        Discord
+                    </a>
+                </div>
+            </section>
             
             <!-- Section structure de la formation -->
-            <section id="structure">
+            <section id="structure" class="animate-fadeIn" style="animation-delay: 0.4s;">
                 <div class="text-center mb-8">
-                    <h2 class="text-3xl font-bold text-[#3498DB]">La Structure de Votre Formation</h2>
-                    <p class="mt-2 max-w-2xl mx-auto">Votre programme est divisé en trois blocs de compétences principaux, totalisant 380 heures en formation continue ou 609 heures en alternance.</p>
+                    <h2 class="text-3xl font-bold text-neon-blue">La Structure de Votre Formation</h2>
+                    <p class="mt-2 max-w-2xl mx-auto text-text-secondary">Votre programme est divisé en trois blocs de compétences principaux, totalisant 380 heures en formation continue.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <h3 class="text-xl font-semibold mb-2">Bloc 1: Gérer la paie et les déclarations sociales</h3>
-                        <p class="font-bold text-lg text-[#3498DB]">170h</p>
+                    <div class="bg-dark-card rounded-lg shadow-md p-6 transform hover:scale-105 transition-transform duration-300">
+                        <h3 class="text-xl font-semibold mb-2 text-neon-yellow">Gérer la paie et les déclarations sociales</h3>
+                        <p class="font-extrabold text-2xl text-neon-pink">170h</p>
                     </div>
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <h3 class="text-xl font-semibold mb-2">Bloc 2: Assurer la Gestion administrative du personnel</h3>
-                        <p class="font-bold text-lg text-[#3498DB]">92h</p>
+                    <div class="bg-dark-card rounded-lg shadow-md p-6 transform hover:scale-105 transition-transform duration-300">
+                        <h3 class="text-xl font-semibold mb-2 text-neon-yellow">Assurer la Gestion administrative du personnel</h3>
+                        <p class="font-extrabold text-2xl text-neon-pink">92h</p>
                     </div>
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <h3 class="text-xl font-semibold mb-2">Bloc 3: Conseiller et assister les décideurs</h3>
-                        <p class="font-bold text-lg text-[#3498DB]">118h</p>
-                    </div>
-                </div>
-                 <div class="bg-white rounded-lg shadow-md p-6 mt-8">
-                    <h3 class="text-2xl font-bold text-center text-[#3498DB] mb-4">Répartition des Heures de Formation (380h)</h3>
-                    <p class="text-center text-gray-600 mb-6">Cette visualisation montre la part de chaque bloc dans le parcours de formation continue.</p>
-                    <div class="chart-container h-80 md:h-96">
-                        <canvas id="programStructureChart"></canvas>
+                    <div class="bg-dark-card rounded-lg shadow-md p-6 transform hover:scale-105 transition-transform duration-300">
+                        <h3 class="text-xl font-semibold mb-2 text-neon-yellow">Conseiller et assister les décideurs</h3>
+                        <p class="font-extrabold text-2xl text-neon-pink">118h</p>
                     </div>
                 </div>
             </section>
             
             <!-- Section Évaluations -->
-            <section id="evaluations">
+            <section id="evaluations" class="animate-fadeIn" style="animation-delay: 0.6s;">
                 <div class="text-center mb-8">
-                    <h2 class="text-3xl font-bold text-[#3498DB]">Vos Évaluations Clés</h2>
-                    <p class="mt-2 max-w-2xl mx-auto">Pour obtenir votre titre RNCP, la validation de 4 évaluations certifiantes est obligatoire. Elles sont conçues pour simuler des situations professionnelles réelles.</p>
-                    <p class="text-sm text-gray-500 italic">Les durées ci-dessous sont une estimation. Les évaluations ne sont pas chronométrées et vous avez une période définie pour les compléter, comme indiqué dans le calendrier des examens.</p>
+                    <h2 class="text-3xl font-bold text-neon-blue">Vos Évaluations Clés</h2>
+                    <p class="mt-2 max-w-2xl mx-auto text-text-secondary">Pour obtenir votre titre RNCP, la validation de 4 évaluations certifiantes est obligatoire. Elles sont conçues pour simuler des situations professionnelles réelles.</p>
+                    <p class="text-sm text-text-secondary italic">Les durées ci-dessous sont une estimation. Les évaluations ne sont pas chronométrées et vous avez une période définie pour les compléter, comme indiqué dans le calendrier des examens.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-[#F9A825]">
-                        <h4 class="font-bold text-lg">Bloc 1</h4>
-                        <p class="text-sm text-gray-500 mb-2">Gérer la paie et les déclarations sociales</p>
-                        <p><span class="font-semibold">Type :</span> Écrit</p>
-                        <p><span class="font-semibold">Durée :</span> 10 heures (estimation)</p>
+                    <div class="bg-dark-card rounded-lg shadow-md p-6 border-l-4 border-neon-yellow transform hover:scale-105 transition-transform duration-300">
+                        <h4 class="font-bold text-lg text-neon-blue">Bloc 1</h4>
+                        <p class="text-sm text-text-secondary mb-2">Gérer la paie et les déclarations sociales</p>
+                        <p><span class="font-semibold text-text-primary">Type :</span> Écrit</p>
+                        <p><span class="font-semibold text-text-primary">Durée :</span> 10 heures (estimation)</p>
                     </div>
-                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-[#FFA500]">
-                        <h4 class="font-bold text-lg">Bloc 2</h4>
-                        <p class="text-sm text-gray-500 mb-2">Assurer la Gestion administrative du personnel</p>
-                        <p><span class="font-semibold">Type :</span> Écrit</p>
-                        <p><span class="font-semibold">Durée :</span> 8 heures (estimation)</p>
+                    <div class="bg-dark-card rounded-lg shadow-md p-6 border-l-4 border-neon-pink transform hover:scale-105 transition-transform duration-300">
+                        <h4 class="font-bold text-lg text-neon-blue">Bloc 2</h4>
+                        <p class="text-sm text-text-secondary mb-2">Assurer la Gestion administrative du personnel</p>
+                        <p><span class="font-semibold text-text-primary">Type :</span> Écrit</p>
+                        <p><span class="font-semibold text-text-primary">Durée :</span> 8 heures (estimation)</p>
                     </div>
-                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-[#3498DB]">
-                        <h4 class="font-bold text-lg">Bloc 3 (Partie 1)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Conseiller et assister les décideurs</p>
-                        <p><span class="font-semibold">Type :</span> Écrit</p>
-                        <p><span class="font-semibold">Durée :</span> 10 heures (estimation)</p>
+                    <div class="bg-dark-card rounded-lg shadow-md p-6 border-l-4 border-neon-blue transform hover:scale-105 transition-transform duration-300">
+                        <h4 class="font-bold text-lg text-neon-blue">Bloc 3 (Partie 1)</h4>
+                        <p class="text-sm text-text-secondary mb-2">Conseiller et assister les décideurs</p>
+                        <p><span class="font-semibold text-text-primary">Type :</span> Écrit</p>
+                        <p><span class="font-semibold text-text-primary">Durée :</span> 10 heures (estimation)</p>
                     </div>
-                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-[#2C3E50]">
-                        <h4 class="font-bold text-lg">Bloc 3 (Partie 2)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Conseiller et assister les décideurs</p>
-                        <p><span class="font-semibold">Type :</span> Oral Asynchrone</p>
-                        <p><span class="font-semibold">Durée :</span> 4-5 minutes (estimation)</p>
+                    <div class="bg-dark-card rounded-lg shadow-md p-6 border-l-4 border-neon-yellow transform hover:scale-105 transition-transform duration-300">
+                        <h4 class="font-bold text-lg text-neon-blue">Bloc 3 (Partie 2)</h4>
+                        <p class="text-sm text-text-secondary mb-2">Conseiller et assister les décideurs</p>
+                        <p><span class="font-semibold text-text-primary">Type :</span> Oral Asynchrone</p>
+                        <p><span class="font-semibold text-text-primary">Durée :</span> 4-5 minutes (estimation)</p>
                     </div>
                 </div>
             </section>
 
             <!-- Section FAQ et Infos Clés -->
-            <section id="faq-cles" class="bg-white rounded-lg shadow-md p-8">
-                <h2 class="text-3xl font-bold text-[#3498DB] text-center mb-6">FAQ - Questions Fréquentes</h2>
+            <section id="faq-cles" class="bg-dark-card rounded-lg shadow-md p-8 animate-fadeIn" style="animation-delay: 0.8s;">
+                <h2 class="text-3xl font-bold text-neon-blue text-center mb-6">FAQ - Questions Fréquentes</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
                         <div class="flex items-center space-x-2 mb-2">
-                            <svg class="h-6 w-6 text-[#E74C3C]" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a1 1 0 00-.894.553L7.382 8H4a1 1 0 000 2h3.382l-.566-.566A1 1 0 017.382 11H10a1 1 0 00.894-.553l2.224-4.448A1 1 0 0013.382 5H10zm0 6a1 1 0 00-1 1v3a1 1 0 102 0v-3a1 1 0 00-1-1z" clip-rule="evenodd" />
-                            </svg>
-                            <h3 class="font-bold text-lg text-[#E74C3C]">Promo Automne/Hiver et Printemps/Été</h3>
+                            <span class="text-2xl text-neon-pink">📆</span>
+                            <h3 class="font-bold text-lg text-neon-yellow">Promo Automne/Hiver et Printemps/Été</h3>
                         </div>
-                        <p class="text-sm text-gray-600 mb-4">Les dates de début et de fin de promotions correspondent aux saisons : Automne/Hiver pour la promo de Vinci et Printemps/Été pour la promo Aristote. Les sessions d'évaluation sont alignées sur ces périodes.</p>
+                        <p class="text-sm text-text-secondary text-justify-both mb-4">Les dates de début et de fin de promotions correspondent aux saisons : Automne/Hiver pour la promo de Vinci et Printemps/Été pour la promo Aristote. Les sessions d'évaluation sont alignées sur ces périodes.</p>
                         <div class="flex items-center space-x-2 mb-2">
-                            <svg class="h-6 w-6 text-[#E74C3C]" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 14h-2V7h2v9zm0-10h-2V4h2v2z" />
-                            </svg>
-                            <h3 class="font-bold text-lg text-[#E74C3C]">Report de session</h3>
+                            <span class="text-2xl text-neon-pink">🔁</span>
+                            <h3 class="font-bold text-lg text-neon-yellow">Report de session</h3>
                         </div>
-                        <p class="text-sm text-gray-600 mb-4">Un report de session est possible, mais cela dépend de votre financement. Renseignez-vous auprès du service relation apprenant pour connaître les conditions spécifiques à votre situation. Vous pouvez faire une demande directement sur la plateforme dans la section Planning.</p>
+                        <p class="text-sm text-text-secondary text-justify-both mb-4">Un report de session est possible, mais cela dépend de votre financement. Renseignez-vous auprès du service relation apprenant pour connaître les conditions spécifiques à votre situation. Vous pouvez faire une demande directement sur la plateforme dans la section Planning.</p>
                         <div class="flex items-center space-x-2 mb-2">
-                            <svg class="h-6 w-6 text-[#E74C3C]" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M5 8h10M5 12h10M5 16h10" />
-                            </svg>
-                            <h3 class="font-bold text-lg text-[#E74C3C]">Repasser les évaluations</h3>
+                            <span class="text-2xl text-neon-pink">✔️</span>
+                            <h3 class="font-bold text-lg text-neon-yellow">Repasser les évaluations</h3>
                         </div>
-                        <p class="text-sm text-gray-600 mb-4">Vous avez la possibilité de repasser vos évaluations pendant deux ans à partir de votre inscription. Chaque bloc validé sur la première session l'est définitivement. Si vous ratez un bloc, seul celui-ci sera à repasser sur la deuxième session. Si vous ne validez pas tous vos blocs après les deux sessions, un report automatique sur la session suivante est mis en place par Studi.</p>
+                        <p class="text-sm text-text-secondary text-justify-both mb-4">Vous avez la possibilité de repasser vos évaluations pendant deux ans à partir de votre inscription. Chaque bloc validé sur la première session l'est définitivement. Si vous ratez un bloc, seul celui-ci sera à repasser sur la deuxième session. Si vous ne validez pas tous vos blocs après les deux sessions, un report automatique sur la session suivante est mis en place par Studi.</p>
                     </div>
                     <div>
                         <div class="flex items-center space-x-2 mb-2">
-                            <svg class="h-6 w-6 text-[#E74C3C]" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12z" clip-rule="evenodd" />
-                            </svg>
-                            <h3 class="font-bold text-lg text-[#E74C3C]">Importance des Lives et des Forums</h3>
+                            <span class="text-2xl text-neon-pink">🗣️</span>
+                            <h3 class="font-bold text-lg text-neon-yellow">Importance des Lives et des Forums</h3>
                         </div>
-                        <p class="text-sm text-gray-600 mb-4">Les lives, animés par des professionnels, sont essentiels pour monter en compétence. Participez ou regardez les replays. N'hésitez pas à poser vos questions à l'avance ou via le forum. Le forum est le lieu idéal pour poser des questions spécifiques aux sujets, et le groupe Discord pour échanger avec d'autres apprenants.</p>
+                        <p class="text-sm text-text-secondary text-justify-both mb-4">Les lives, animés par des professionnels, sont essentiels pour monter en compétence. Participez ou regardez les replays. N'hésitez pas à poser vos questions à l'avance ou via le forum. Le forum est le lieu idéal pour poser des questions spécifiques aux sujets, et le groupe Discord pour échanger avec d'autres apprenants.</p>
                         <div class="flex items-center space-x-2 mb-2">
-                            <svg class="h-6 w-6 text-[#E74C3C]" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M13.5 13.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM10 2a8 8 0 100 16 8 8 0 000-16z" />
-                            </svg>
-                            <h3 class="font-bold text-lg text-[#E74C3C]">Lien utile</h3>
+                            <span class="text-2xl text-neon-pink">🔗</span>
+                            <h3 class="font-bold text-lg text-neon-yellow">Lien utile</h3>
                         </div>
-                        <p class="text-sm text-gray-600 mb-4">Retrouvez toutes les informations sur les lives et révisions sur ce document : <a href="https://projettechacademy.github.io/Suivi-et-Revision-des-Competences-Gestionnaire-de-Paie/" class="text-[#3498DB] hover:underline" target="_blank" rel="noopener noreferrer">Suivi et Révision des Compétences</a></p>
-                        <div class="flex items-center space-x-2 mb-2">
-                            <svg class="h-6 w-6 text-[#E74C3C]" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
-                            </svg>
-                            <h3 class="font-bold text-lg text-[#E74C3C]">Communauté</h3>
-                        </div>
-                        <p class="text-sm text-gray-600 mb-4">Les groupes WhatsApp et Discord sont des ressources précieuses. Posez vos questions, car vous n'êtes pas seul ! Discord a l'avantage de garder un historique des discussions, facilitant la recherche d'informations pour les nouveaux arrivants.</p>
-                        <div class="flex space-x-4">
-                            <a href="https://chat.whatsapp.com/EtV0ux5ipAG5JDhopzo0ut" class="inline-block bg-[#25D366] text-white py-2 px-4 rounded-full font-bold hover:bg-[#128C7E]" target="_blank" rel="noopener noreferrer">
-                                <svg class="w-4 h-4 inline-block mr-1" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M17.472 12.336a9.5 9.5 0 00-1.57-2.678l-1.396-1.396a1 1 0 00-1.414 0L12 10.586l-2.086-2.086a1 1 0 00-1.414 0L6.472 10.336a9.5 9.5 0 00-1.57-2.678L3 6.94l.586-.586a1 1 0 000-1.414L2.5 4.586a1 1 0 00-1.414 0L.586 3.5a1 1 0 000 1.414l1.414 1.414a1 1 0 000 1.414l-1.414 1.414a1 1 0 000 1.414L2.5 10.414a1 1 0 001.414 0l1.414-1.414a1 1 0 001.414 0l2.086 2.086a1 1 0 001.414 0l1.414-1.414a1 1 0 001.414 0l1.414 1.414a1 1 0 001.414 0l1.414-1.414a1 1 0 001.414 0l1.414 1.414a1 1 0 001.414 0l1.414-1.414a1 1 0 000-1.414L17.472 12.336z" />
-                                </svg>
-                                Rejoindre le groupe WhatsApp
-                            </a>
-                            <a href="https://discord.gg/v473jkhH36" class="inline-block bg-[#7289DA] text-white py-2 px-4 rounded-full font-bold hover:bg-[#677BC4]" target="_blank" rel="noopener noreferrer">
-                                <svg class="w-4 h-4 inline-block mr-1" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M13.298 6.002a.855.855 0 00-.776.438c-1.373.8-2.618 1.554-3.95 2.385-1.332.83-2.672 1.66-4.072 2.585a.855.855 0 00-.472.932c.11.393.44.66.862.66h.142c1.373-.393 2.766-.786 4.14-.855.776-.036 1.55-.072 2.327-.11h.142c.777.038 1.55.074 2.327.11 1.373.07 2.766.462 4.14.855h.142a.855.855 0 00.862-.66c.11-.393-.153-.786-.472-.932-1.399-.925-2.74-1.755-4.072-2.585-1.332-.83-2.577-1.584-3.95-2.385a.855.855 0 00-.776-.438zM10 2a8 8 0 100 16 8 8 0 000-16z" />
-                                </svg>
-                                Rejoindre le groupe Discord
-                            </a>
-                        </div>
+                        <p class="text-sm text-text-secondary text-justify-both mb-4">Retrouvez toutes les informations sur les lives et révisions sur ce document : <a href="https://projettechacademy.github.io/Suivi-et-Revision-des-Competences-Gestionnaire-de-Paie/" class="text-neon-blue hover:underline" target="_blank" rel="noopener noreferrer">Suivi et Révision des Compétences</a></p>
                     </div>
                 </div>
             </section>
 
-            <!-- Section Contact et Services -->
-            <section id="contact-services" class="bg-white rounded-lg shadow-md p-8">
-                <h2 class="text-3xl font-bold text-[#3498DB] text-center mb-6">Contacter un service Studi</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="space-y-4">
-                        <div class="flex items-center space-x-2">
-                            <span class="text-2xl">👩‍🏫</span>
-                            <h3 class="font-bold text-lg">Pédagogie</h3>
-                        </div>
-                        <p class="text-sm text-gray-600">L'organisation de votre parcours, examens, stage, financement... <a href="#" class="text-[#3498DB] hover:underline">Poser la question à votre responsable de formation</a>.</p>
-                        <div class="flex items-center space-x-2">
-                            <span class="text-2xl">💰</span>
-                            <h3 class="font-bold text-lg">Comptabilité</h3>
-                        </div>
-                        <p class="text-sm text-gray-600">Vos paiements et factures. Contactez le service comptabilité à <a href="mailto:recouvrement@studi.fr" class="text-[#3498DB] hover:underline">recouvrement@studi.fr</a>.</p>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="flex items-center space-x-2">
-                            <span class="text-2xl">📝</span>
-                            <h3 class="font-bold text-lg">Report de session</h3>
-                        </div>
-                        <p class="text-sm text-gray-600">Demande de report de session d'examen sous condition d'y être éligible. Renseignez-vous auprès du service relation apprenant pour connaître les conditions spécifiques à votre financement.</p>
-                        <div class="flex items-center space-x-2">
-                            <span class="text-2xl">💻</span>
-                            <h3 class="font-bold text-lg">Technique</h3>
-                        </div>
-                        <p class="text-sm text-gray-600">Pour une difficulté technique ou une suggestion d’évolution de la plateforme de formation.</p>
-                    </div>
-                </div>
-                <div class="mt-8 text-center">
-                     <p class="font-bold text-lg text-[#E74C3C] blinking-text">
-                        Pour toute demande d'information, n'hésitez pas à composer le numéro suivant :
-                    </p>
-                    <p class="text-4xl font-extrabold text-[#E74C3C] mt-2">01 74 88 80 00</p>
-                    <p class="text-sm text-gray-600 mt-2">Du lundi au vendredi de 8h à 21h et les samedis & dimanches de 9h à 17h</p>
-                </div>
-            </section>
-            
             <!-- Section Conventions de Stage -->
-            <section id="conventions" class="bg-white rounded-lg shadow-md p-8">
-                <h2 class="text-3xl font-bold text-[#3498DB] text-center mb-6">Conventions de Stage</h2>
+            <section id="conventions" class="bg-dark-card rounded-lg shadow-md p-8 animate-fadeIn" style="animation-delay: 1s;">
+                <h2 class="text-3xl font-bold text-neon-blue text-center mb-6">Conventions de Stage</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="flex flex-col items-center text-center p-4 border border-gray-200 rounded-lg">
-                        <div class="icon-card">
+                    <div class="flex flex-col items-center text-center p-4 rounded-lg bg-dark-bg border border-neon-blue hover:scale-105 transition-transform duration-300">
+                        <div class="w-16 h-16 flex items-center justify-center rounded-full bg-neon-pink mb-2 shadow-lg">
                             <span class="text-4xl">📚</span>
                         </div>
-                        <p class="font-semibold mb-2">Préparez votre convention</p>
-                        <p class="text-sm text-gray-600">Prenez connaissance des modalités et obtenez votre attestation d’assurance Responsabilité Civile.</p>
+                        <p class="font-semibold mb-2 text-text-primary">Préparez votre convention</p>
+                        <p class="text-sm text-text-secondary">Prenez connaissance des modalités et obtenez votre attestation d’assurance Responsabilité Civile.</p>
                     </div>
-                    <div class="flex flex-col items-center text-center p-4 border border-gray-200 rounded-lg">
-                         <div class="icon-card">
+                    <div class="flex flex-col items-center text-center p-4 rounded-lg bg-dark-bg border border-neon-blue hover:scale-105 transition-transform duration-300">
+                         <div class="w-16 h-16 flex items-center justify-center rounded-full bg-neon-yellow mb-2 shadow-lg">
                             <span class="text-4xl">📝</span>
                         </div>
-                        <p class="font-semibold mb-2">Téléchargez et demandez</p>
-                        <p class="text-sm text-gray-600">Téléchargez la fiche d'information et faites votre demande de convention de stage.</p>
+                        <p class="font-semibold mb-2 text-text-primary">Téléchargez et demandez</p>
+                        <p class="text-sm text-text-secondary">Téléchargez la fiche d'information et faites votre demande de convention de stage.</p>
                     </div>
-                    <div class="flex flex-col items-center text-center p-4 border border-gray-200 rounded-lg">
-                         <div class="icon-card">
+                    <div class="flex flex-col items-center text-center p-4 rounded-lg bg-dark-bg border border-neon-blue hover:scale-105 transition-transform duration-300">
+                         <div class="w-16 h-16 flex items-center justify-center rounded-full bg-neon-pink mb-2 shadow-lg">
                             <span class="text-4xl">✍️</span>
                         </div>
-                        <p class="font-semibold mb-2">Signez le document</p>
-                        <p class="text-sm text-gray-600">La convention vous sera envoyée pour signature électronique ou manuscrite.</p>
+                        <p class="font-semibold mb-2 text-text-primary">Signez le document</p>
+                        <p class="text-sm text-text-secondary">La convention vous sera envoyée pour signature électronique ou manuscrite.</p>
                     </div>
-                    <div class="flex flex-col items-center text-center p-4 border border-gray-200 rounded-lg">
-                         <div class="icon-card">
+                    <div class="flex flex-col items-center text-center p-4 rounded-lg bg-dark-bg border border-neon-blue hover:scale-105 transition-transform duration-300">
+                         <div class="w-16 h-16 flex items-center justify-center rounded-full bg-neon-yellow mb-2 shadow-lg">
                             <span class="text-4xl">🚀</span>
                         </div>
-                        <p class="font-semibold mb-2">Débutez votre stage</p>
-                        <p class="text-sm text-gray-600">Une fois signée par toutes les parties, vous pourrez débuter votre stage. Demandez 7 jours ouvrés à l'avance.</p>
+                        <p class="font-semibold mb-2 text-text-primary">Débutez votre stage</p>
+                        <p class="text-sm text-text-secondary">Une fois signée par toutes les parties, vous pourrez débuter votre stage. Demandez 7 jours ouvrés à l'avance.</p>
                     </div>
                 </div>
             </section>
 
             <!-- Section Emploi et Carrière -->
-            <section id="carriere" class="bg-white rounded-lg shadow-md p-8">
-                <h2 class="text-3xl font-bold text-[#3498DB] text-center mb-6">Votre Espace Emploi & Carrière</h2>
-                <p class="mt-2 text-center max-w-2xl mx-auto">Studi vous accompagne vers le monde du travail. L'équipe du Career Center est à votre disposition.</p>
+            <section id="carriere" class="bg-dark-card rounded-lg shadow-md p-8 animate-fadeIn" style="animation-delay: 1.2s;">
+                <h2 class="text-3xl font-bold text-neon-blue text-center mb-6">Votre Espace Emploi & Carrière</h2>
+                <p class="mt-2 text-center max-w-2xl mx-auto text-text-secondary">Studi vous accompagne vers le monde du travail. L'équipe du Career Center est à votre disposition.</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-                    <div class="flex flex-col items-center text-center p-4 border border-gray-200 rounded-lg">
-                        <div class="icon-card">
+                    <div class="flex flex-col items-center text-center p-4 rounded-lg bg-dark-bg border border-neon-blue transform hover:scale-105 transition-transform duration-300">
+                        <div class="w-16 h-16 flex items-center justify-center rounded-full bg-neon-pink mb-2 shadow-lg">
                             <span class="text-4xl">📖</span>
                         </div>
-                        <h3 class="font-bold text-lg mb-2">Fiches Pratiques</h3>
-                        <p class="text-sm text-gray-600">Rédigez un CV, une lettre de motivation, préparez vos entretiens, et organisez votre recherche.</p>
+                        <h3 class="font-bold text-lg mb-2 text-text-primary">Fiches Pratiques</h3>
+                        <p class="text-sm text-text-secondary">Rédigez un CV, une lettre de motivation, préparez vos entretiens, et organisez votre recherche.</p>
                     </div>
-                    <div class="flex flex-col items-center text-center p-4 border border-gray-200 rounded-lg">
-                        <div class="icon-card">
+                    <div class="flex flex-col items-center text-center p-4 rounded-lg bg-dark-bg border border-neon-blue transform hover:scale-105 transition-transform duration-300">
+                        <div class="w-16 h-16 flex items-center justify-center rounded-full bg-neon-yellow mb-2 shadow-lg">
                             <span class="text-4xl">🤝</span>
                         </div>
-                        <h3 class="font-bold text-lg mb-2">Coaching Carrière</h3>
-                        <p class="text-sm text-gray-600">Pour toute demande concernant votre recherche d'alternance, de stage ou d'emploi. Envoyez votre demande au service Career Center.</p>
+                        <h3 class="font-bold text-lg mb-2 text-text-primary">Coaching Carrière</h3>
+                        <p class="text-sm text-text-secondary">Pour toute demande concernant votre recherche d'alternance, de stage ou d'emploi. Envoyez votre demande au service Career Center.</p>
                     </div>
-                    <div class="flex flex-col items-center text-center p-4 border border-gray-200 rounded-lg">
-                        <div class="icon-card">
+                    <div class="flex flex-col items-center text-center p-4 rounded-lg bg-dark-bg border border-neon-blue transform hover:scale-105 transition-transform duration-300">
+                        <div class="w-16 h-16 flex items-center justify-center rounded-full bg-neon-pink mb-2 shadow-lg">
                             <span class="text-4xl">🗺️</span>
                         </div>
-                        <h3 class="font-bold text-lg mb-2">Découvrez les Métiers</h3>
-                        <p class="text-sm text-gray-600">Nos fiches métiers vous présentent tous les débouchés après votre formation.</p>
+                        <h3 class="font-bold text-lg mb-2 text-text-primary">Découvrez les Métiers</h3>
+                        <p class="text-sm text-text-secondary">Nos fiches métiers vous présentent tous les débouchés après votre formation.</p>
                     </div>
                 </div>
             </section>
 
-            <section id="equipe">
+            <section id="equipe" class="animate-fadeIn" style="animation-delay: 1.4s;">
                 <div class="text-center mb-8">
-                    <h2 class="text-3xl font-bold text-[#3498DB]">Votre Équipe Pédagogique</h2>
-                    <p class="mt-2 max-w-2xl mx-auto">Une équipe d'experts est dédiée à votre réussite. Voici la structure de votre encadrement pour vous guider tout au long de votre parcours.</p>
+                    <h2 class="text-3xl font-bold text-neon-blue">Votre Équipe Pédagogique</h2>
+                    <p class="mt-2 max-w-2xl mx-auto text-text-secondary">Une équipe d'experts est dédiée à votre réussite. Voici la structure de votre encadrement pour vous guider tout au long de votre parcours.</p>
                 </div>
-                <div class="bg-white rounded-lg shadow-md p-8 flex flex-col items-center space-y-6">
-                    <div class="text-center bg-[#2C3E50] text-white p-4 rounded-lg shadow-lg">
+                <div class="bg-dark-card rounded-lg shadow-md p-8 flex flex-col items-center space-y-6">
+                    <div class="text-center bg-dark-bg text-text-primary p-4 rounded-lg shadow-lg">
                         <p class="font-bold">Florence CROUZET</p>
-                        <p class="text-sm">Responsable de la Filière RH</p>
+                        <p class="text-sm text-text-secondary">Responsable de la Filière RH</p>
                     </div>
-                    <div class="w-px h-8 bg-gray-300"></div>
-                    <div class="text-center bg-[#3498DB] text-white p-4 rounded-lg shadow-lg">
+                    <div class="w-px h-8 bg-text-secondary"></div>
+                    <div class="text-center bg-dark-bg text-text-primary p-4 rounded-lg shadow-lg">
                         <p class="font-bold">Zahida GUITT</p>
-                        <p class="text-sm">Responsable Pédagogique</p>
+                        <p class="text-sm text-text-secondary">Responsable Pédagogique</p>
                     </div>
-                    <div class="w-px h-8 bg-gray-300"></div>
+                    <div class="w-px h-8 bg-text-secondary"></div>
                     <div class="w-full flex flex-col md:flex-row justify-center items-center md:items-stretch gap-6 text-center">
-                        <div class="w-full md:w-1/3 bg-gray-100 p-4 rounded-lg border border-gray-200">
-                            <p class="font-bold">Jordan HENRY</p>
-                            <p class="text-sm text-gray-600">Assistant Pédagogique</p>
+                        <div class="w-full md:w-1/3 p-4 rounded-lg border border-neon-blue flex flex-col items-center space-y-2 transform hover:scale-105 transition-transform duration-300">
+                            <span class="text-2xl">👨‍🏫</span>
+                            <p class="font-bold text-neon-yellow">Jordan HENRY</p>
+                            <p class="text-sm text-text-secondary">Assistant Pédagogique</p>
                         </div>
-                        <div class="w-full md:w-1/3 bg-gray-100 p-4 rounded-lg border border-gray-200">
-                            <p class="font-bold">Christèle LECOINTE</p>
-                            <p class="text-sm text-gray-600">Formateur Référent</p>
+                        <div class="w-full md:w-1/3 p-4 rounded-lg border border-neon-blue flex flex-col items-center space-y-2 transform hover:scale-105 transition-transform duration-300">
+                            <span class="text-2xl">👩‍🏫</span>
+                            <p class="font-bold text-neon-pink">Christèle LECOINTE</p>
+                            <p class="text-sm text-text-secondary">Formateur Référent</p>
                         </div>
-                        <div class="w-full md:w-1/3 bg-gray-100 p-4 rounded-lg border border-gray-200">
-                            <p class="font-bold">Formateurs Experts</p>
-                            <p class="text-sm text-gray-600">Spécialistes par matière</p>
+                        <div class="w-full md:w-1/3 p-4 rounded-lg border border-neon-blue flex flex-col items-center space-y-2 transform hover:scale-105 transition-transform duration-300">
+                            <span class="text-2xl">🎓</span>
+                            <p class="font-bold text-neon-blue">Formateurs Experts</p>
+                            <p class="text-sm text-text-secondary">Spécialistes par matière</p>
                         </div>
                     </div>
                 </div>
             </section>
 
 
-            <section id="debouches">
+            <section id="debouches" class="animate-fadeIn" style="animation-delay: 1.6s;">
                 <div class="text-center mb-8">
-                    <h2 class="text-3xl font-bold text-[#3498DB]">Après Votre Formation</h2>
-                    <p class="mt-2 max-w-2xl mx-auto">Votre titre vous ouvre les portes de nombreux métiers et vous permet de poursuivre votre montée en compétences.</p>
+                    <h2 class="text-3xl font-bold text-neon-blue">Après Votre Formation</h2>
+                    <p class="mt-2 max-w-2xl mx-auto text-text-secondary">Votre titre vous ouvre les portes de nombreux métiers et vous permet de poursuivre votre montée en compétences.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <h3 class="text-2xl font-semibold mb-4 flex items-center"><span class="text-3xl mr-3">💼</span>Débouchés Professionnels</h3>
-                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <div class="bg-dark-card rounded-lg shadow-md p-6 transform hover:scale-105 transition-transform duration-300">
+                        <h3 class="text-2xl font-semibold mb-4 flex items-center text-neon-pink"><span class="text-3xl mr-3">💼</span>Débouchés Professionnels</h3>
+                        <ul class="list-disc list-inside space-y-2 text-text-secondary">
                             <li>Gestionnaire de paie</li>
                             <li>Gestionnaire paie et administration du personnel</li>
                             <li>Collaborateur Social et Paie</li>
@@ -354,9 +309,9 @@
                             <li>Comptable en charge de la paie</li>
                         </ul>
                     </div>
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <h3 class="text-2xl font-semibold mb-4 flex items-center"><span class="text-3xl mr-3">🎓</span>Poursuite d'Études</h3>
-                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <div class="bg-dark-card rounded-lg shadow-md p-6 transform hover:scale-105 transition-transform duration-300">
+                        <h3 class="text-2xl font-semibold mb-4 flex items-center text-neon-pink"><span class="text-3xl mr-3">🎓</span>Poursuite d'Études</h3>
+                        <ul class="list-disc list-inside space-y-2 text-text-secondary">
                             <li>Bachelor Pilotage RH</li>
                             <li>Bachelor Paie et Social</li>
                             <li>MBA Manager stratégique des RH</li>
@@ -364,88 +319,52 @@
                     </div>
                 </div>
             </section>
+            
+            <!-- Section Contact et Services -->
+            <section id="contact-services" class="bg-dark-card rounded-lg shadow-md p-8 animate-fadeIn" style="animation-delay: 1.8s;">
+                <h2 class="text-3xl font-bold text-neon-blue text-center mb-6">Contacter un service Studi</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-2">
+                            <span class="text-2xl text-neon-yellow">👩‍🏫</span>
+                            <h3 class="font-bold text-lg text-text-primary">Pédagogie</h3>
+                        </div>
+                        <p class="text-sm text-text-secondary text-justify-both">L'organisation de votre parcours, examens, stage, financement... <a href="#" class="text-neon-blue hover:underline">Poser la question à votre responsable de formation</a>.</p>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-2xl text-neon-yellow">💰</span>
+                            <h3 class="font-bold text-lg text-text-primary">Comptabilité</h3>
+                        </div>
+                        <p class="text-sm text-text-secondary text-justify-both">Vos paiements et factures. Contactez le service comptabilité à <a href="mailto:recouvrement@studi.fr" class="text-neon-blue hover:underline">recouvrement@studi.fr</a>.</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-2">
+                            <span class="text-2xl text-neon-yellow">📝</span>
+                            <h3 class="font-bold text-lg text-text-primary">Report de session</h3>
+                        </div>
+                        <p class="text-sm text-text-secondary text-justify-both">Demande de report de session d'examen sous condition d'y être éligible. Renseignez-vous auprès du service relation apprenant pour connaître les conditions spécifiques à votre financement.</p>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-2xl text-neon-yellow">💻</span>
+                            <h3 class="font-bold text-lg text-text-primary">Technique</h3>
+                        </div>
+                        <p class="text-sm text-text-secondary text-justify-both">Pour une difficulté technique ou une suggestion d’évolution de la plateforme de formation.</p>
+                    </div>
+                </div>
+                <div class="mt-8 text-center">
+                     <p class="font-bold text-lg text-neon-yellow blinking-text animate-pulseGlow">
+                        Pour toute demande d'information, n'hésitez pas à composer le numéro suivant :
+                    </p>
+                    <p class="text-4xl font-extrabold text-neon-pink mt-2">01 74 88 80 00</p>
+                    <p class="text-sm text-text-secondary mt-2">Du lundi au vendredi de 8h à 21h et les samedis & dimanches de 9h à 17h</p>
+                </div>
+            </section>
+
         </main>
 
-        <footer class="text-center mt-16 pt-8 border-t border-gray-300">
-            <p class="text-gray-600">Cette infographie est un résumé de la newsletter. Pour tous les détails, consultez votre espace apprenant.</p>
-            <p class="font-semibold text-[#3498DB] mt-2">Bonne continuation dans votre formation !</p>
-            <p class="text-gray-600 mt-2">Source: <a href="https://app.comptalia.com/v3/blog/details/52086?hasOnlyOneParcours=false" class="text-[#3498DB] hover:underline" target="_blank" rel="noopener noreferrer">Newsletter de la formation</a></p>
+        <footer class="text-center mt-16 pt-8 border-t border-gray-700">
+            <p class="text-text-secondary">Cette infographie est un résumé de la newsletter. Pour tous les détails, consultez votre espace apprenant.</p>
+            <p class="font-semibold text-neon-blue mt-2">Bonne continuation dans votre formation !</p>
+            <p class="text-text-secondary mt-2">Source: <a href="https://app.comptalia.com/v3/blog/details/52086?hasOnlyOneParcours=false" class="text-neon-blue hover:underline" target="_blank" rel="noopener noreferrer">Newsletter de la formation</a></p>
         </footer>
     </div>
-
-    <script>
-        const wrapLabel = (label, maxLength = 16) => {
-            if (label.length <= maxLength) {
-                return label;
-            }
-            const words = label.split(' ');
-            const lines = [];
-            let currentLine = '';
-            words.forEach(word => {
-                if ((currentLine + word).length > maxLength) {
-                    lines.push(currentLine.trim());
-                    currentLine = '';
-                }
-                currentLine += word + ' ';
-            });
-            lines.push(currentLine.trim());
-            return lines;
-        };
-        
-        const tooltipTitleCallback = (tooltipItems) => {
-            const item = tooltipItems[0];
-            let label = item.chart.data.labels[item.dataIndex];
-            if (Array.isArray(label)) {
-                return label.join(' ');
-            } else {
-                return label;
-            }
-        };
-
-        const ctx = document.getElementById('programStructureChart').getContext('2d');
-        const programStructureChart = new Chart(ctx, {
-            type: 'doughnut',
-            data: {
-                labels: [
-                    wrapLabel('Bloc 1: Gérer la paie et les déclarations sociales'),
-                    wrapLabel('Bloc 2: Assurer la Gestion administrative du personnel'),
-                    wrapLabel('Bloc 3: Conseiller et assister les décideurs')
-                ],
-                datasets: [{
-                    label: 'Répartition des heures',
-                    data: [170, 92, 118],
-                    backgroundColor: [
-                        '#F9A825', /* Jaune plus soutenu */
-                        '#FFA500', /* Orange */
-                        '#3498DB'  /* Bleu */
-                    ],
-                    borderColor: '#FFFFFF',
-                    borderWidth: 4,
-                    hoverOffset: 8
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: 'bottom',
-                        labels: {
-                            padding: 20,
-                            font: {
-                                size: 14
-                            }
-                        }
-                    },
-                    tooltip: {
-                        callbacks: {
-                            title: tooltipTitleCallback
-                        }
-                    }
-                },
-                cutout: '60%'
-            }
-        });
-    </script>
 </body>
 </html>
