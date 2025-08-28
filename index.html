@@ -19,6 +19,7 @@
                         'text-secondary': '#A0A0A0',
                         'accent-whatsapp': '#25D366',
                         'accent-discord': '#7289DA',
+                        'accent-suivi': '#FF4081',
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -111,19 +112,28 @@
             <section id="community-links" class="bg-dark-card rounded-lg shadow-md p-8 text-center animate-fadeIn" style="animation-delay: 0.4s;">
                 <h2 class="text-3xl font-bold text-neon-blue mb-6">Rejoignez la Communauté !</h2>
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                    <a href="https://chat.whatsapp.com/EtV0ux5ipAG5JDhopzo0ut" class="w-full sm:w-auto inline-block bg-accent-whatsapp text-dark-bg py-3 px-6 rounded-full font-bold text-lg hover:bg-opacity-80 transition-colors duration-300 transform hover:scale-105" target="_blank" rel="noopener noreferrer">
+                    <!-- Onglet WhatsApp avec contour -->
+                    <a href="https://chat.whatsapp.com/EtV0ux5ipAG5JDhopzo0ut" class="w-full sm:w-auto inline-block bg-accent-whatsapp text-dark-bg py-3 px-6 rounded-full font-bold text-lg hover:bg-opacity-80 transition-colors duration-300 transform hover:scale-105 border-2 border-white" target="_blank" rel="noopener noreferrer">
                          <!-- WhatsApp SVG Icon -->
                         <svg class="w-6 h-6 inline-block mr-2" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12.04 2.16C6.545 2.16 2.056 6.653 2.056 12.15c0 1.79.478 3.513 1.393 5.03L2.012 21.03l3.8-1.025a9.837 9.837 0 005.187 1.408c5.495 0 9.988-4.493 9.988-9.988S17.535 2.16 12.04 2.16zM17.062 15.655a.86.86 0 01-.61.267c-.204 0-.408-.076-.563-.228-1.125-1.054-2.316-2.164-3.56-3.218-.328-.276-.65-.542-.99-.838-.284-.25-.382-.41-.442-.66a.465.465 0 01.12-.556c.148-.12.302-.244.45-.37.332-.276.66-.542.99-.817.18-.152.26-.35.25-.56a.81.81 0 00-.23-.62c-.15-.125-.3-.25-.455-.38-.21-.19-.45-.25-.66-.23-.314.03-.62.06-.93.09-.23.02-.45-.02-.68-.12-.22-.11-.44-.22-.66-.33-.25-.13-.49-.25-.74-.38-.29-.15-.55-.22-.84-.23h-.03a.585.585 0 00-.58.62c.02.48.05.95.09 1.43a6.83 6.83 0 00.315 1.57c.32.74.82 1.4 1.39 1.94 1.6 1.4 3.25 2.8 4.88 4.2.33.29.67.58.99.88.24.23.49.46.74.69a.82.82 0 00.58.26h.03a.56.56 0 00.57-.49c.04-.37.06-.75.09-1.12.02-.19-.04-.38-.15-.53z"/>
                         </svg>
                         WhatsApp
                     </a>
-                    <a href="https://discord.gg/4XFpkQDzde" class="w-full sm:w-auto inline-block bg-accent-discord text-white py-3 px-6 rounded-full font-bold text-lg hover:bg-opacity-80 transition-colors duration-300 transform hover:scale-105" target="_blank" rel="noopener noreferrer">
+                    <!-- Onglet Discord avec contour -->
+                    <a href="https://discord.gg/4XFpkQDzde" class="w-full sm:w-auto inline-block bg-accent-discord text-white py-3 px-6 rounded-full font-bold text-lg hover:bg-opacity-80 transition-colors duration-300 transform hover:scale-105 border-2 border-white" target="_blank" rel="noopener noreferrer">
                         <!-- Discord SVG Icon -->
                         <svg class="w-6 h-6 inline-block mr-2" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M21.571 2.296l-2.348-1.353a.997.997 0 00-1.41.365l-2.613 4.536c-1.847-.202-3.72-.202-5.568 0L6.187 1.308a.998.998 0 00-1.41.365L2.429 2.296a1 1 0 00-.365 1.41l1.624 2.82c-.894 1.258-1.54 2.658-1.87 4.128-.314 1.472-.314 3.018-.002 4.49.33 1.47.976 2.87 1.87 4.128l-1.624 2.82a1 1 0 00.365 1.41l2.348 1.353a.997.997 0 001.41-.365l2.613-4.536c1.847.202 3.72.202 5.568 0l2.613 4.536a.997.997 0 001.41.365l2.348-1.353a1 1 0 00.365-1.41l-1.624-2.82c.894-1.258 1.54-2.658 1.87-4.128.314-1.472.314-3.018.002-4.49-.33-1.47-.976-2.87-1.87-4.128l1.624-2.82a1 1 0 00-.365-1.41zm-6.574 12.352c-1.246 0-2.257-.905-2.257-2.016 0-1.112 1.011-2.017 2.257-2.017s2.257.905 2.257 2.017c0 1.111-1.011 2.016-2.257 2.016zm5.83-2.016c0 1.111-1.011 2.016-2.257 2.016s-2.257-.905-2.257-2.016c0-1.112 1.011-2.017 2.257-2.017s2.257.905 2.257 2.017z"/>
                         </svg>
                         Discord
+                    </a>
+                     <!-- Nouvel onglet pour le Suivi Parcours Paie -->
+                    <a href="https://projettechacademy.github.io/Suivi-et-Revision-des-Competences-Gestionnaire-de-Paie/" 
+                       target="_blank" 
+                       class="w-full sm:w-auto inline-block bg-accent-suivi text-white py-3 px-6 rounded-full font-bold text-lg hover:bg-opacity-80 transition-colors duration-300 transform hover:scale-105"
+                       style="background-color: #FF4081; color: white; border: 2px solid white;">
+                        Suivi Parcours Paie ✨
                     </a>
                 </div>
                 <div class="mt-4">
@@ -194,8 +204,8 @@
                     <div class="bg-dark-card rounded-lg shadow-md p-6 border-l-4 border-neon-yellow transform hover:scale-105 transition-transform duration-300">
                         <h4 class="font-bold text-lg text-neon-blue"><b>Bloc 3 (Partie 2)</b></h4>
                         <p class="text-sm text-text-secondary mb-2">Conseiller et assister les décideurs</p>
-                        <p><span class="font-semibold text-text-primary">Type :</span> Oral Asynchrone</p>
-                        <p><span class="font-semibold text-text-primary">Durée :</span> 4-5 minutes (estimation)</p>
+                        <p><span class="font-semibold text-semibold text-text-primary">Type :</span> Oral Asynchrone</p>
+                        <p><span class="font-semibold text-semibold text-text-primary">Durée :</span> 4-5 minutes (estimation)</p>
                     </div>
                 </div>
             </section>
